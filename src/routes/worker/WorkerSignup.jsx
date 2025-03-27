@@ -8,6 +8,8 @@ export function WorkerSignup() {
     const passwordRef = useRef(null);
     const descriptionRef = useRef(null)
     const occupationRef = useRef(null)
+    const skillRef = useRef(null)
+    const experienceRef = useRef()
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
     const navigate = useNavigate()
@@ -20,9 +22,11 @@ export function WorkerSignup() {
         const password = passwordRef.current.value;
         const description = descriptionRef.current.value;
         const occupation = occupationRef.current.value;
+        const skill = skillRef.current.value;
+        const experience = experienceRef.current.value;
 
         // Basic validation
-        if (!username || !email || !password || !description || !occupation) {
+        if (!username || !email || !password || !description || !occupation || !skill || !experience) {
             setError("All fields are required");
             return;
         }
@@ -36,7 +40,9 @@ export function WorkerSignup() {
                 email,
                 password,
                 description,
-                occupation
+                occupation,
+                skill,
+                experience
             });
             
             // Handle successful signup
@@ -82,6 +88,20 @@ export function WorkerSignup() {
                     type="text" 
                     ref={occupationRef} 
                     placeholder="occupation" 
+                    className="border-2 border-gray-300 rounded-md p-2" 
+                    required
+                />
+                <input 
+                    type="number" 
+                    ref={experienceRef} 
+                    placeholder="experience" 
+                    className="border-2 border-gray-300 rounded-md p-2" 
+                    required
+                />
+                <input 
+                    type="text" 
+                    ref={skillRef} 
+                    placeholder="skills" 
                     className="border-2 border-gray-300 rounded-md p-2" 
                     required
                 />

@@ -29,11 +29,14 @@ export function WorkerSignin() {
                 email,
                 password
             });
+
+            axios.defaults.headers.common["Authorization"] = response.data;
+
             
             // Handle successful signup
             console.log("Signup successful:", response.data);
             // Redirect or show success message here
-            navigate("/worker/feed")
+            navigate("/client/feed")
             
         } catch (err) {
             setError(err.response?.data?.message || "Signup failed");

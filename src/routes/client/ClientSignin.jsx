@@ -71,7 +71,7 @@ export function ClientSignin() {
                 >
                     {loading ? "Signing up..." : "Signup"}
                 </button>
-            </form>
+            </form> 
         </div>
     );
 }

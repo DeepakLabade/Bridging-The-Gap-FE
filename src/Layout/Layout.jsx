@@ -1,34 +1,64 @@
-import React, { Children } from 'react'
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 
 const Layout = () => {
-    return (
-        <div className="min-h-screen flex flex-col">
-          {/* Header */}
-          <header className="bg-white shadow-md py-4 px-6">
-            <div className="container mx-auto flex justify-between items-center">
-                <div className="flex items-center space-x-8">
-                <h1 className="text-2xl font-bold text-[#52AE77]">GigConnect</h1>
-                <nav className="flex space-x-6">
-                    <a href="/" className="text-gray-700 hover:text-blue-500">Home</a>
-                    <a href="/jobs" className="text-gray-700 hover:text-blue-500">Jobs</a>
-                    <a href="/freelancers" className="text-gray-700 hover:text-blue-500">Freelancers</a>
-                </nav>
-                </div>
-                <div className="flex space-x-4">
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  // Uncomment and use this useEffect when your auth API is ready
+  useEffect(() => {
+    const checkAuthStatus = async () => {
+      try {
+        
+        const response = await axios.get("http://localhost:3000/api/v1/worker/isloggedin");
+        setIsLoggedIn(response.data === true);
+      } catch (error) {
+        console.error("Error checking auth status:", error);
+        setIsLoggedIn(false);
+      }
+    };
+    
+    checkAuthStatus();
+  }, []);
+
+  return (
+    <div className="min-h-screen flex flex-col">
+      {/* Header */}
+      <header className="bg-white shadow-md py-4 px-6">
+        <div className="container mx-auto flex justify-between items-center">
+          <div className="flex items-center space-x-8">
+            <h1 className="text-2xl font-bold text-[#52AE77]">GigConnect</h1>
+            <nav className="flex space-x-6">
+              <a href="/" className="text-gray-700 hover:text-blue-500">Home</a>
+              <a href="/client/feed" className="text-gray-700 hover:text-blue-500">Jobs</a>
+              <a href="/freelancers" className="text-gray-700 hover:text-blue-500">Freelancers</a>
+            </nav>
+          </div>
+          
+          <div className="flex space-x-4">
+            {isLoggedIn ? (
+              <Link to="/profile">
+                <button className="bg-[#52AE77] hover:bg-[#52BE80] text-white px-4 py-2 rounded-md transition">
+                  Profile
+                </button>
+              </Link>
+            ) : (
+              <>
                 <Link to="/roleselection">
-                    <button className="text-gray-700 hover:text-blue-500 px-4 py-2 rounded-md hover:bg-gray-100 transition">
-                        Sign In
-                    </button>
+                  <button className="text-gray-700 hover:text-blue-500 px-4 py-2 rounded-md hover:bg-gray-100 transition">
+                    Sign In
+                  </button>
                 </Link>
-                <Link to={"/roleselection"}>
-                    <button className="bg-[#52AE77] hover:bg-[#52BE80] text-white px-4 py-2 rounded-md transition">
-                        Sign Up
-                    </button>
+                <Link to="/roleselection">
+                  <button className="bg-[#52AE77] hover:bg-[#52BE80] text-white px-4 py-2 rounded-md transition">
+                    Sign Up
+                  </button>
                 </Link>
-                </div>
-            </div>
-            </header>
+              </>
+            )}
+          </div>
+        </div>
+      </header>
     
           {/* Main Content */}
           <main className="flex-grow container mx-auto px-6 py-8">
