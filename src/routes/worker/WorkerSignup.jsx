@@ -7,6 +7,7 @@ export function WorkerSignup() {
     const emailRef = useRef(null);
     const passwordRef = useRef(null);
     const descriptionRef = useRef(null)
+    const addressRef = useRef(null);
     const occupationRef = useRef(null)
     const skillRef = useRef(null)
     const experienceRef = useRef()
@@ -21,6 +22,7 @@ export function WorkerSignup() {
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
         const description = descriptionRef.current.value;
+        const address = addressRef.current.value;
         const occupation = occupationRef.current.value;
         const skill = skillRef.current.value;
         const experience = experienceRef.current.value;
@@ -42,7 +44,8 @@ export function WorkerSignup() {
                 description,
                 occupation,
                 skill,
-                experience
+                experience,
+                address
             });
             
             // Handle successful signup
@@ -88,6 +91,13 @@ export function WorkerSignup() {
                     type="text" 
                     ref={occupationRef} 
                     placeholder="occupation" 
+                    className="border-2 border-gray-300 rounded-md p-2" 
+                    required
+                />
+                <input 
+                    type="text" 
+                    ref={addressRef} 
+                    placeholder="address" 
                     className="border-2 border-gray-300 rounded-md p-2" 
                     required
                 />

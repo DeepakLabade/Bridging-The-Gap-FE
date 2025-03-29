@@ -6,20 +6,20 @@ const Layout = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   // Uncomment and use this useEffect when your auth API is ready
-  useEffect(() => {
-    const checkAuthStatus = async () => {
-      try {
+  // useEffect(() => {
+  //   const checkAuthStatus = async () => {
+  //     try {
         
-        const response = await axios.get("http://localhost:3000/api/v1/worker/isloggedin");
-        setIsLoggedIn(response.data === true);
-      } catch (error) {
-        console.error("Error checking auth status:", error);
-        setIsLoggedIn(false);
-      }
-    };
+  //       const response = await axios.get("http://localhost:3000/api/v1/worker/isloggedin");
+  //       setIsLoggedIn(response.data === true);
+  //     } catch (error) {
+  //       console.error("Error checking auth status:", error);
+  //       setIsLoggedIn(false);
+  //     }
+  //   };
     
-    checkAuthStatus();
-  }, []);
+  //   checkAuthStatus();
+  // }, []);
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -31,7 +31,7 @@ const Layout = () => {
             <nav className="flex space-x-6">
               <a href="/" className="text-gray-700 hover:text-green-500">Home</a>
               <a href="/client/feed" className="text-gray-700 hover:text-green-500">Jobs</a>
-              <a href="/freelancers" className="text-gray-700 hover:text-green-500">Freelancers</a>
+              <a href="/map" className="text-gray-700 hover:text-green-500">find by map</a>
             </nav>
           </div>
           

@@ -13,6 +13,7 @@ import RoleSelection from './routes/RoleSelectionPage'
 import WorkerFeed from './routes/Feed/WorkerFeed'
 import ClientFeed from './routes/Feed/ClientFeed'
 import Chat from './routes/Chat'
+import Map from './routes/map/Map'
 
 function App() {
  return <BrowserRouter>
@@ -23,6 +24,7 @@ function App() {
         <Route path='/services' element={<Services/>} />
         <Route path='/contact' element={<Contact/>} />
         <Route path='/about' element={<Aboutus/>} />
+        <Route path='/map' element={<Map />} />
         <Route path='/client/feed' element={<ClientFeed/>} />
         <Route path='/worker/feed' element={<WorkerFeed/>} />
       </Route>
