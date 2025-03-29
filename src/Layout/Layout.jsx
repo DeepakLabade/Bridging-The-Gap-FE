@@ -29,9 +29,9 @@ const Layout = () => {
           <div className="flex items-center space-x-8">
             <h1 className="text-2xl font-bold text-[#52AE77]">GigConnect</h1>
             <nav className="flex space-x-6">
-              <a href="/" className="text-gray-700 hover:text-blue-500">Home</a>
-              <a href="/client/feed" className="text-gray-700 hover:text-blue-500">Jobs</a>
-              <a href="/freelancers" className="text-gray-700 hover:text-blue-500">Freelancers</a>
+              <a href="/" className="text-gray-700 hover:text-green-500">Home</a>
+              <a href="/client/feed" className="text-gray-700 hover:text-green-500">Jobs</a>
+              <a href="/freelancers" className="text-gray-700 hover:text-green-500">Freelancers</a>
             </nav>
           </div>
           
@@ -45,12 +45,12 @@ const Layout = () => {
             ) : (
               <>
                 <Link to="/roleselection">
-                  <button className="text-gray-700 hover:text-blue-500 px-4 py-2 rounded-md hover:bg-gray-100 transition">
+                  <button className="text-gray-700 hover:text-green-500 px-4 py-2 rounded-md hover:bg-gray-100 transition cursor-pointer">
                     Sign In
                   </button>
                 </Link>
                 <Link to="/roleselection">
-                  <button className="bg-[#52AE77] hover:bg-[#52BE80] text-white px-4 py-2 rounded-md transition">
+                  <button className="bg-[#52AE77] hover:bg-[#52BE80] text-white px-4 py-2 rounded-md transition cursor-pointer">
                     Sign Up
                   </button>
                 </Link>
@@ -70,16 +70,15 @@ const Layout = () => {
   {/* Newsletter Section */}
   <div className="max-w-3xl mx-auto mb-8 text-center">
     <h3 className="text-lg font-medium mb-4">Subscribe to our newsletter</h3>
-    <div className="flex flex-col sm:flex-row gap-2 justify-center max-w-md mx-auto">
-      <input
-        type="email"
-        placeholder="Input your email"
-        className="flex-grow px-4 py-2 text-sm rounded border border-gray-600 bg-gray-900 text-white focus:outline-none focus:ring-1 focus:ring-blue-500"
-      />
-      <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 text-sm rounded font-medium">
-        Subscribe
-      </button>
-    </div>
+    <div className="flex flex-col sm:flex-row gap-2 justify-center max-w-md mx-auto  mt-4  items-center border rounded-lg overflow-hidden">
+    <input 
+              type="text" 
+              placeholder="Enter job title or keywords" 
+              className="w-full p-3 outline-none"
+            />
+            <button className="bg-[#52AE77] px-6 py-3  text-white font-semibold hover:bg-green hover:bg-[#52BE80] cursor-pointer">Search</button>
+          
+</div>
   </div>
 
   {/* Quick Links Section - Single Line Layout */}
@@ -87,13 +86,13 @@ const Layout = () => {
     <div className="text-center">
       <h4 className="text-sm font-medium mb-4">Quick Links</h4>
       <div className="flex flex-wrap justify-center gap-x-6 text-sm">
-        <a href="#" className="hover:text-blue-400">Pricing</a>
-        <a href="#" className="hover:text-blue-400">About us</a>
-        <a href="#" className="hover:text-blue-400">Features</a>
-        <a href="#" className="hover:text-blue-400">Help Center</a>
-        <a href="#" className="hover:text-blue-400">Contact us</a>
-        <a href="#" className="hover:text-blue-400">FAQs</a>
-        <a href="#" className="hover:text-blue-400">Careers</a>
+        <a href="#" className="hover:text-green-400">Pricing</a>
+        <a href="#" className="hover:text-green-400">About us</a>
+        <a href="#" className="hover:text-green-400">Features</a>
+        <a href="#" className="hover:text-green-400">Help Center</a>
+        <a href="#" className="hover:text-green-400">Contact us</a>
+        <a href="#" className="hover:text-green-400">FAQs</a>
+        <a href="#" className="hover:text-green-400">Careers</a>
       </div>
     </div>
   </div>

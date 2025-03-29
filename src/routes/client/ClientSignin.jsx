@@ -68,7 +68,7 @@ export function ClientSignin() {
                     type="email" 
                     ref={emailRef} 
                     placeholder="Email" 
-                    className="border-2 border-gray-300 rounded-md p-2 bg-stone-200" 
+                    className="border-2 border-gray-300 rounded-md p-2 bg-[#e5eddb]" 
                     required
                 />
                  <label class="block text-gray-600 font-medium mb-0 ">Password</label>
@@ -76,7 +76,7 @@ export function ClientSignin() {
                     type="password" 
                     ref={passwordRef} 
                     placeholder="Password" 
-                    className="border-2 border-gray-300 rounded-md p-2 bg-stone-200 mb-2" 
+                    className="border-2 border-gray-300 rounded-md p-2 bg-[#e5eddb] mb-1" 
                     required
                 />
                 <button 
@@ -88,9 +88,9 @@ export function ClientSignin() {
                     {loading ? "Signing up..." : "Signin"}
                 </button>
             </form>
-            <div className="mt-4 text-center">
+            <div className="mt-3 text-center">
             <p className="text-sm text-gray-600 mt-0">Or</p>
-            <button className="w-full h-10 flex items-center justify-center border py-3 rounded-lg mt-2 hover:bg-gray-100">
+            <button className="w-3/4 ml-15 h-10 flex items-center justify-center border py-3 rounded-lg mt-2 hover:bg-gray-100">
               <img
                 src="https://www.svgrepo.com/show/355037/google.svg"
                 alt="Google"
