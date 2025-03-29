@@ -3,10 +3,10 @@ import { FaSearch } from 'react-icons/fa';
 
 const Home = () => {
   return (
-    <div className="w-screen relative">
+    <div className="w-full relative">
       {/* Background Image Section */}
-      <div className="w-full h-screen relative">
-        <img src="/IMG1.jpg" alt="Background" className="w-full h-full object-cover" />
+      <div className="w-full h-screen relative ">
+        <img src="/IMG1.jpg" alt="Background" className="w-full h-full object-cover " />
         
         {/* Job Search Section */}
         <div className="absolute top-1/4 right-8 bg-white shadow-lg rounded-lg p-9 w-190">
