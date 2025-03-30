@@ -87,7 +87,7 @@ const Layout = () => {
       <h4 className="text-sm font-medium mb-4">Quick Links</h4>
       <div className="flex flex-wrap justify-center gap-x-6 text-sm">
         <a href="#" className="hover:text-green-400">Pricing</a>
-        <a href="#" className="hover:text-green-400">About us</a>
+        <a href="/about" className="hover:text-green-400">About us</a>
         <a href="#" className="hover:text-green-400">Features</a>
         <a href="#" className="hover:text-green-400">Help Center</a>
         <a href="#" className="hover:text-green-400">Contact us</a>
