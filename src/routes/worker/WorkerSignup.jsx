@@ -6,26 +6,20 @@ export function WorkerSignup() {
     const nameRef = useRef(null);
     const emailRef = useRef(null);
     const passwordRef = useRef(null);
-    const descriptionRef = useRef(null)
-    const addressRef = useRef(null);
-    const occupationRef = useRef(null)
-    const skillRef = useRef(null)
-    const experienceRef = useRef()
+    const descriptionRef = useRef(null);
+    const occupationRef = useRef(null);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
     async function handleSignup(e) {
-        e.preventDefault(); // Prevent default form submission
-        
+        e.preventDefault();
+
         const username = nameRef.current.value;
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
         const description = descriptionRef.current.value;
-        const address = addressRef.current.value;
         const occupation = occupationRef.current.value;
-        const skill = skillRef.current.value;
-        const experience = experienceRef.current.value;
 
         // Basic validation
         if (!username || !email || !password || !description || !occupation || !experience) {
@@ -42,17 +36,12 @@ export function WorkerSignup() {
                 email,
                 password,
                 description,
-                occupation,
-                skill,
-                experience,
-                address
+                occupation
             });
-            
-            // Handle successful signup
+
             console.log("Signup successful:", response.data);
-            // Redirect or show success message here
-            navigate("/worker/signin")
-            
+            navigate("/worker/signin");
+
         } catch (err) {
             setError(err.response?.data?.message || "Signup failed");
             console.error("Signup error:", err);
@@ -136,7 +125,7 @@ export function WorkerSignup() {
 
 
     return (
-        <div className="h-full flex bg-gray-100">
+        <div className="h-screen flex bg-gray-100">
             {/* Left: Signup Form Section */}
             <div className="w-2/5 flex flex-col justify-center items-center p-10">
                 <div className="bg-gray-100 p-8 w-full max-w-md">
@@ -253,14 +242,13 @@ export function WorkerSignup() {
             </div>
 
             {/* Right: Image Section */}
-            <div className="w-1/5 flex justify-center items-center p-10">
-                {/* <img
-                    src="/public/signupimg.jpg" // Update with actual image path
+            <div className="w-3/5 flex justify-center items-center p-10">
+                <img
+                    src="/public/clientsignup.jpg" // Update with actual image path
                     alt="Worker Signup Illustration"
-                    className=""
-                /> */}
+                    className="w-full h-auto object-contain"
+                />
             </div>
         </div>
     );
-
 }
