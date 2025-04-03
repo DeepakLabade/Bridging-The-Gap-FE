@@ -15,14 +15,14 @@ const RoleSelection = () => {
           <div 
             className={`p-4 border-2 rounded-lg cursor-pointer transition-colors ${
               selectedRole === 'client' 
-                ? 'border-blue-500 bg-blue-50' 
-                : 'border-gray-200 hover:border-blue-300'
+                ? 'border-green-500 bg-green-50' 
+                : 'border-gray-200 hover:border-green-300'
             }`}
             onClick={() => setSelectedRole('client')}
           >
             <div className="flex items-center">
               <div className={`w-5 h-5 rounded-full border-2 mr-3 ${
-                selectedRole === 'client' ? 'border-blue-500 bg-blue-500' : 'border-gray-300'
+                selectedRole === 'client' ? 'border-green-500 bg-green-500' : 'border-gray-300'
               }`}></div>
               <span className="font-medium">I'm a client, hiring for a project</span>
             </div>
@@ -31,14 +31,14 @@ const RoleSelection = () => {
           <div 
             className={`p-4 border-2 rounded-lg cursor-pointer transition-colors ${
               selectedRole === 'freelancer' 
-                ? 'border-blue-500 bg-blue-50' 
-                : 'border-gray-200 hover:border-blue-300'
+                ? 'border-green-500 bg-green-50' 
+                : 'border-gray-200 hover:border-green-300'
             }`}
             onClick={() => setSelectedRole('freelancer')}
           >
             <div className="flex items-center">
               <div className={`w-5 h-5 rounded-full border-2 mr-3 ${
-                selectedRole === 'freelancer' ? 'border-blue-500 bg-blue-500' : 'border-gray-300'
+                selectedRole === 'freelancer' ? 'border-green-500 bg-green-500' : 'border-gray-300'
               }`}></div>
               <span className="font-medium">I'm a freelancer, looking for work</span>
             </div>
@@ -58,9 +58,9 @@ const RoleSelection = () => {
         {/* Action Buttons */}
         <div className="space-y-4">
           <button 
-            className={`w-full py-2 px-4 rounded-md font-medium ${
+            className={`w-full py-2 px-4 rounded-md font-medium cursor-pointer ${
               selectedRole 
-                ? 'bg-blue-600 hover:bg-blue-700 text-white' 
+                ? 'bg-green-600 hover:bg-green-700 text-white' 
                 : 'bg-gray-300 text-gray-500 cursor-not-allowed'
             }`}
             disabled={!selectedRole}
@@ -83,7 +83,7 @@ const RoleSelection = () => {
               } else {
                 navigate("/client/signin")
               }
-            }} className="text-blue-600 hover:underline">Log In</a>
+            }} className="text-green-600 hover:underline cursor-pointer">Log In</a>
           </div>
         </div>
       </div>
