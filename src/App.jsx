@@ -14,6 +14,7 @@ import WorkerFeed from './routes/Feed/WorkerFeed'
 import ClientFeed from './routes/Feed/ClientFeed'
 import Chat from './routes/Chat'
 import Map from './routes/map/Map'
+import IndividualWorker from './routes/worker/IndividualWorker'
 
 function App() {
  return <BrowserRouter>
@@ -25,6 +26,7 @@ function App() {
         <Route path='/contact' element={<Contact/>} />
         <Route path='/about' element={<Aboutus/>} />
         <Route path='/map' element={<Map />} />
+        <Route path='worker/:id' element={<IndividualWorker/>} />
         <Route path='/client/feed' element={<ClientFeed/>} />
         <Route path='/worker/feed' element={<WorkerFeed/>} />
       </Route>

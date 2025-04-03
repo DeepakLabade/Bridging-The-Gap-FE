@@ -46,17 +46,17 @@ export function ClientSignin() {
     }
 
     return (
-        <div className="flex items-center justify-center h-screen ">
+        <div className="flex items-center justify-center h-screen bg-gray-100 ">
       
       <div className="w-1/2 p-6 hidden h-full md:flex items-center justify-center  rounded-l-lg">
           <img
-            src="/signupimg.jpg"
+            src="/public/signin.jpg"
             alt="Illustration"
             className="w-full h-full object-cover"
           />
         </div>
 
-        <div className="w-full lg:w-1/2 flex items-center justify-center bg-white p-8">
+        <div className="w-full lg:w-1/2 flex items-center justify-center p-8 bg-gray-100">
            <div className="max-w-md w-full gap-4 items-center">
             <h1 className="text-3xl font-bold text-center text-black ">Welcome back!!</h1>
             <p className="  text-center text-gray-500 mb-10">Please enter your details..</p>

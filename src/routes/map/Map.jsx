@@ -3,10 +3,12 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import axios from 'axios';
 import L from 'leaflet'; // Import leaflet for custom icons
+import { useNavigate } from 'react-router-dom';
 
 const Map = () => {
     const [location, setLocation] = useState([]);
     const markersRef = useRef({});
+    const navigate = useNavigate()
 
     useEffect(() => {
         const getCoords = async () => {
@@ -38,6 +40,11 @@ const Map = () => {
         popupAnchor: [0, -35],
     });
 
+    async function changePage(id) {
+        await axios.get("http://localhost:3000/api/v1/ws/start")
+        navigate(`/worker/${id}`)
+    }
+
     return (
         <div style={{ borderRadius: '12px', boxShadow: '0 8px 20px rgba(0, 0, 0, 0.1)', overflow: 'hidden' }}>
             <MapContainer 
@@ -58,7 +65,7 @@ const Map = () => {
                         eventHandlers={{
                             mouseover: (e) => e.target.openPopup(),
                             mouseout: (e) => e.target.closePopup(),
-                            click: () => alert(`Clicked on ${worker.username}, Location: (${worker.lat}, ${worker.lng})`),
+                            click: () => changePage(worker.id),
                         }}
                         ref={(el) => (markersRef.current[worker.id] = el)}
                     >

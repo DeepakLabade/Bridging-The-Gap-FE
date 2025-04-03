@@ -1,7 +1,11 @@
 import React from 'react';
 import { FaSearch } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
+
+  const navigate = useNavigate()
+
   return (
     <div className="w-full relative">
       {/* Background Image Section */}
@@ -43,9 +47,13 @@ const Home = () => {
         {/* Job Seeker Card */}
         <div className="bg-white shadow-lg rounded-lg p-6 w-1/3 flex items-center justify-between">
           <div>
-            <h2 className="text-2xl font-semibold">For Job Seeker</h2>
+            <h2 className="text-2xl font-semibold">For Job Seeker
+              
+            </h2>
             <p className="text-gray-600">Find your dream job today.</p>
-            <button className="mt-4 px-4 py-2 border border-[#52AE77] text-[##52AE77] rounded-lg hover:bg-[#52AE77] hover:text-white transition cursor-pointer">Find Job</button>
+            <button className="mt-4 px-4 py-2 border border-[#52AE77] text-[##52AE77] rounded-lg hover:bg-[#52AE77] hover:text-white transition cursor-pointer"
+            onClick={() => navigate("/client/feed")}
+            >Find Job</button>
           </div>
           <div className="w-32 h-20 bg-gray-300 rounded-lg"></div>
         </div>
