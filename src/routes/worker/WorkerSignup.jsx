@@ -7,6 +7,9 @@ export function WorkerSignup() {
     const emailRef = useRef(null);
     const passwordRef = useRef(null);
     const descriptionRef = useRef(null);
+    const skillRef = useRef(null);
+    const addressRef = useRef(null);
+    const experienceRef = useRef(null);
     const occupationRef = useRef(null);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
@@ -18,6 +21,9 @@ export function WorkerSignup() {
         const username = nameRef.current.value;
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
+        const experience = experienceRef.current.value;
+        const address = addressRef.current.value;
+        const skill = skillRef.current.value;
         const description = descriptionRef.current.value;
         const occupation = occupationRef.current.value;
 
@@ -36,7 +42,10 @@ export function WorkerSignup() {
                 email,
                 password,
                 description,
-                occupation
+                occupation,
+                skill,
+                address,
+                experience
             });
 
             console.log("Signup successful:", response.data);
