@@ -14,6 +14,7 @@ export function WorkerSignup() {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
     const navigate = useNavigate();
+    
 
     async function handleSignup(e) {
         e.preventDefault();
@@ -253,7 +254,7 @@ export function WorkerSignup() {
             {/* Right: Image Section */}
             <div className="w-3/5 flex justify-center items-center p-10">
                 <img
-                    src="/public/clientsignup.jpg" // Update with actual image path
+                    src="/clientsignup.jpg" // Update with actual image path
                     alt="Worker Signup Illustration"
                     className="w-full h-auto object-contain"
                 />
