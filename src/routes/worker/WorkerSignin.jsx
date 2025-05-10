@@ -47,32 +47,61 @@ export function WorkerSignin() {
     }
 
     return (
-        <div className="flex flex-col items-center justify-center h-screen bg-gray-100">
-            <h1 className="text-2xl font-bold text-center mb-4">Signup</h1>
+        <div className="flex items-center justify-center h-screen ">
+      
+      <div className="w-1/2 p-6 hidden h-full md:flex items-center justify-center  rounded-l-lg">
+          <img
+            src="/signupimg.jpg"
+            alt="Illustration"
+            className="w-full h-full object-cover"
+          />
+        </div>
+
+        <div className="w-full lg:w-1/2 flex items-center justify-center bg-white p-8">
+           <div className="max-w-md w-full gap-4 items-center">
+            <h1 className="text-3xl font-bold text-center text-black ">Welcome back!!</h1>
+            <p className="  text-center text-gray-500 mb-10">Please enter your details..</p>
             {error && <p className="text-red-500 mb-4">{error}</p>}
-            <form onSubmit={handleSignup} className="flex flex-col gap-4">
+            <form onSubmit={handleSignup} className="flex flex-col gap-4 space-y-0 justify-center align-middle ">
+
+            <label class="block text-gray-600 font-medium mb-0 ">Email Address</label>
                 <input 
                     type="email" 
                     ref={emailRef} 
                     placeholder="Email" 
-                    className="border-2 border-gray-300 rounded-md p-2" 
+                    className="border-2 border-gray-300 rounded-md p-2 bg-stone-200" 
                     required
                 />
+                 <label class="block text-gray-600 font-medium mb-0 ">Password</label>
                 <input 
                     type="password" 
                     ref={passwordRef} 
                     placeholder="Password" 
-                    className="border-2 border-gray-300 rounded-md p-2" 
+                    className="border-2 border-gray-300 rounded-md p-2 bg-stone-200 mb-2" 
                     required
                 />
                 <button 
+
                     type="submit" 
-                    className="bg-blue-500 text-white p-2 rounded-md disabled:opacity-50"
+                    className="w-3/4 text-center items-center pt-1 ml-15 bg-green-600 text-white rounded-lg hover:bg-green-700 transition duration-200 size-10 pb-1 cursor-pointer mb-0"
                     disabled={loading}
                 >
-                    {loading ? "Signing up..." : "Signup"}
+                    {loading ? "Signing up..." : "Signin"}
                 </button>
             </form>
+            <div className="mt-4 text-center">
+            <p className="text-sm text-gray-600 mt-0">Or</p>
+            <button className="w-full h-10 flex items-center justify-center border py-3 rounded-lg mt-2 hover:bg-gray-100">
+              <img
+                src="https://www.svgrepo.com/show/355037/google.svg"
+                alt="Google"
+                className="w-5 h-5 mr-2"
+              />
+              Sign in with Google
+            </button>
+          </div>
+            </div>
+            </div> 
         </div>
     );
 }
